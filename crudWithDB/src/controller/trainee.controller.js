@@ -43,3 +43,7 @@ module.exports.deleteTrainees = async (req, res) => {
     res.send({ error: error.message });
   }
 };
+
+module.exports.showAddTrainee=async (req,res)=>{
+  res.render('addTrainee');
+}
