@@ -11,6 +11,7 @@ const UserSchema = new Schema({
   email: {
     type: String,
     trim: true,
+    index: true,
     unique: true,
     match: [
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -55,7 +56,7 @@ UserSchema.methods = {
     }
   },
   makeSalt: function () {
-    return Math.round(new Date().valueOf * Math.random());
+    return Math.round(new Date().valueOf() * Math.random());
   },
 };
 
